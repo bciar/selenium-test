@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "md5-file": "^4.0.0",
     "request": "^2.87.0",
     "selenium-webdriver": "^3.6.0"
   },

@@ -43,12 +43,12 @@ driver.findElement(webdriver.By.className("highcharts-contextbutton")).click();
 driver.wait(webdriver.until.elementLocated(webdriver.By.css(".highcharts-contextmenu .highcharts-menu .highcharts-menu-item:nth-of-type(2)")), 100000);
 driver.findElement(webdriver.By.css(".highcharts-contextmenu .highcharts-menu .highcharts-menu-item:nth-of-type(2)")).click();
 
-fs.readFile('/etc/hosts', function (err,data) {
+/* fs.readFile('/etc/hosts', function (err,data) {
     if (err) {
       return console.log(err);
     }
     console.log(data);
-});
+}); */
 driver.sleep(100000);
 
 function quitDriver() {
