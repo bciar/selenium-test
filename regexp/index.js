@@ -31,21 +31,28 @@ const checkSvgMatch = (files, cleaningFunction) => {
    
    Also, we only have PNGs right now... I need to get a lot of SVGs for you, lol. - Joe
 */
-const file1 = '/Users/joeflack4/projects/selenium-test/regexp/input/chart.svg';
-const file2 = '/Users/joeflack4/projects/selenium-test/regexp/input/chart (1).svg';
-const files = [file1, file2];
-
 const removeHighChartsId = (text) => {
   const matchPattern1 = /<clipPath id="highcharts-[a-zA-Z0-9]{7}-[0-9]{1,2}">/g;
-  const matchPattern2 = /-[a-zA-Z0-9]{7}-/g;
-  const replacePattern = /-/g;
+  const matchPattern2 = /-[a-zA-Z0-9]{7}-[0-9]{1,2}/g;
+  // const replacePattern = /-/g;
   let svgId;
   svgId = text.match(matchPattern1)[0];
   svgId = svgId.match(matchPattern2)[0];
-  svgId = svgId.replace(replacePattern, '');
+  // svgId = svgId.replace(replacePattern, '');
   return text.replace(new RegExp(svgId, 'g'), '');
 };
 
-const result = checkSvgMatch(files, removeHighChartsId);
-console.log(result);  // TODO @Bciar: You take it from here~
-// return result;
+const checkHighchartsSvgMatch = (files) => {
+  /* Checks that two highchart SVG files match.
+  *
+  * Args:
+  *     files (Array): An array of strings of the pattern '/absolute/path/to/file.svg'.
+  *
+  * Returns:
+  *     bool: Return result true if SVGs match, else false.
+  * */
+  return checkSvgMatch(files, removeHighChartsId);
+};
+
+// export default checkHighchartsSvgMatch;
+module.exports = checkHighchartsSvgMatch;
