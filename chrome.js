@@ -41,12 +41,7 @@ var driver_chr = new webdriver.Builder()
     .forBrowser('chrome')
     .build();
 
-    const file1 = 'C:\\Users\\asharp\\Downloads\\chart.svg';
-    const file2 = 'C:\\Users\\asharp\\Downloads\\chart2.svg';// 'input\\chart2.svg';
-    const files = [file1, file2];
-    const result = checkSvgMatch(files, removeHighChartsId);
-    console.log(result); 
-//searchTest(driver_chr);
+searchTest(driver_chr);
 
 function searchTest(driver) {
     driver.get('http://datalab-staging.pma2020.org/?surveyCountries=PMA2014_BFR1&indicators=cp_all&characteristicGroups=none&chartType=bar&overTime=false'); 
