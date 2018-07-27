@@ -36,7 +36,7 @@ const file2 = '/Users/joeflack4/projects/selenium-test/regexp/input/chart (1).sv
 const files = [file1, file2];
 
 const removeHighChartsId = (text) => {
-  const matchPattern1 = /<clipPath id="highcharts-[a-zA-Z0-9]{7}-11">/g;
+  const matchPattern1 = /<clipPath id="highcharts-[a-zA-Z0-9]{7}-[0-9]{1,2}">/g;
   const matchPattern2 = /-[a-zA-Z0-9]{7}-/g;
   const replacePattern = /-/g;
   let svgId;
